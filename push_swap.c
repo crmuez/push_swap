@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/04 19:14:34 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/06/06 19:28:35 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	main(int argc, char **argv)
 		num = ft_split(argv[1], ' ');
 		check_numbers(num);
 	}
-//	a = ft_atol(num); -> hay que guardar los numeros en el stack, e ir comprobando que no esté repetido
+	i = 0;
+	
+	//a = ft_atol(num);
 }
+

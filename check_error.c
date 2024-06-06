@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/04 19:10:22 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/06/06 19:50:48 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,28 @@ int	check_numbers(char **str)
 		j++;
 	}
 	return (1);
+}
+
+void	save_number(t_stack **a, char **num)
+{
+	int		i;
+	t_stack	*last;
+	t_stack	*new;
+
+	i = 0;
+	while (num[i])
+	{
+		new = ft_lstnew(ft_atol(num[i]));
+		if (!*a)
+		{
+			*a = new;
+			last = new;
+		}
+		else
+		{
+			last->next = new;
+			last = last->next;
+		}
+		i++;
+	}
 }
