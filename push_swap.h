@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/04 19:09:34 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/06/06 21:27:17 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-int		ft_atol(const char *str);
+int		ft_atol(char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_stack	*ft_lstnew(int number);
 int		check_numbers(char **str);
+void	save_number(t_stack **a, char **num);
 
 #endif
