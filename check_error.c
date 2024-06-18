@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/06 21:26:57 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/06/18 18:18:59 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_numbers(char **str)
 		if (str[j][i] == '-')
 			i++;
 		while (str[j][i])
-		{	
+		{
 			if (str[j][i] < '0' || str[j][i] > '9')
 			{
 				write (1, "Error\n", 6);
@@ -38,16 +38,41 @@ int	check_numbers(char **str)
 	return (1);
 }
 
+int	check_repeat(t_stack *a, int num)
+{
+	while (a)
+	{
+		if (a->num == num)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
 void	save_number(t_stack **a, char **num)
 {
 	int		i;
 	t_stack	*last;
 	t_stack	*new;
+	long	n;
 
 	i = 0;
 	while (num[i])
 	{
-		new = ft_lstnew(ft_atol(num[i]));
+		n = ft_atol(num[i]);
+		if (n > INT_MAX || n < INT_MIN)
+		{
+			write (1, "Error\n", 6);
+		//HACER FUNCIÓN QUE LIBERE EL STACK
+			return ;
+		}
+		if (check_repeat(*a, n) == 0)
+		{
+			write (1, "Error\n", 6);
+			return ;
+		}
+			//HACER FUNCIÓN QUE LIBERE EL STACK
+		new = ft_lstnew(n);
 		if (!*a)
 		{
 			*a = new;
