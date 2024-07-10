@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 16:13:33 by crmunoz-         ###   ########.fr       */
+/*   Created: 2023/12/13 15:03:08 by crmunoz-          #+#    #+#             */
+/*   Updated: 2024/07/09 18:23:18 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**num;
-
-	a = NULL;
-	b = NULL;
-	num = NULL;
-	if ((argc == 2 && !argv[1][0]) || argc < 2)
-		write(2, "Error\n", 6);
-	else if (argc == 2)
-		num = ft_split(argv[1], ' ');
-	else
-		num = argv + 1;
-	check_numbers(num);
-	save_number(&a, num);
-	/*while (a)
+	while (lst)
 	{
-		printf("%d\n", a->num);
-		a = a->next;
-	}*/
+		if (lst -> next == NULL)
+			break ;
+		lst = lst -> next;
+	}
+	return (lst);
 }

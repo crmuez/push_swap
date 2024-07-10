@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   move_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 16:13:33 by crmunoz-         ###   ########.fr       */
+/*   Created: 2024/07/09 18:26:42 by crmunoz-          #+#    #+#             */
+/*   Updated: 2024/07/09 19:29:49 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ra(t_stack **a, int print)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**num;
+	t_stack	*aux;
 
-	a = NULL;
-	b = NULL;
-	num = NULL;
-	if ((argc == 2 && !argv[1][0]) || argc < 2)
-		write(2, "Error\n", 6);
-	else if (argc == 2)
-		num = ft_split(argv[1], ' ');
-	else
-		num = argv + 1;
-	check_numbers(num);
-	save_number(&a, num);
-	/*while (a)
+	if (*a || (*a)->next)
 	{
-		printf("%d\n", a->num);
-		a = a->next;
-	}*/
+		aux = *a;
+		*a = (*a)->next;
+		ft_lstadd_back(*a, aux);
+		if (print == 1)
+			write(1, "ra\n", 3);
+	}
+}
+
+void	rb(t_stack **b, int print)
+{
+	t_stack	*aux;
+
+	if (*b || (*b)->next)
+	{
+		aux = *b;
+		*b = (*b)->next;
+		ft_lstadd_back(*b, aux);
+		if (print == 1)
+			write(1, "rb\n", 3);
+	}
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	ra(a, 0);
+	rb(b, 0);
+	write(1, "rr\n", 3);
 }

@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   move_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 16:13:33 by crmunoz-         ###   ########.fr       */
+/*   Created: 2024/07/09 16:12:42 by crmunoz-          #+#    #+#             */
+/*   Updated: 2024/07/09 18:29:10 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	pa(t_stack **a, t_stack **b)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**num;
+	t_stack	*aux;
 
-	a = NULL;
-	b = NULL;
-	num = NULL;
-	if ((argc == 2 && !argv[1][0]) || argc < 2)
-		write(2, "Error\n", 6);
-	else if (argc == 2)
-		num = ft_split(argv[1], ' ');
-	else
-		num = argv + 1;
-	check_numbers(num);
-	save_number(&a, num);
-	/*while (a)
+	if (*b)
 	{
-		printf("%d\n", a->num);
-		a = a->next;
-	}*/
+		aux = (*b)->next;
+		(*b)->next = *a;
+		*a = *b;
+		*b = aux;
+		write (1, "pa\n", 3);
+	}
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	t_stack	*aux;
+
+	if (*a)
+	{
+		aux = (*a)->next;
+		(*a)->next = *b;
+		*b = *a;
+		*a = aux;
+		write (1, "pb\n", 3);
+	}
 }

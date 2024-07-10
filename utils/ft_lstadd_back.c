@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 16:13:33 by crmunoz-         ###   ########.fr       */
+/*   Created: 2023/12/13 15:31:14 by crmunoz-          #+#    #+#             */
+/*   Updated: 2024/07/09 19:16:06 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**num;
+	t_stack	*aux;
 
-	a = NULL;
-	b = NULL;
-	num = NULL;
-	if ((argc == 2 && !argv[1][0]) || argc < 2)
-		write(2, "Error\n", 6);
-	else if (argc == 2)
-		num = ft_split(argv[1], ' ');
+	if (lst == NULL)
+		lst = &new;
+	aux = ft_lstlast(*lst);
+	if (aux)
+		aux -> next = new;
 	else
-		num = argv + 1;
-	check_numbers(num);
-	save_number(&a, num);
-	/*while (a)
-	{
-		printf("%d\n", a->num);
-		a = a->next;
-	}*/
+		*lst = new;
 }
