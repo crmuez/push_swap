@@ -6,14 +6,14 @@
 #    By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 15:45:18 by crmunoz-          #+#    #+#              #
-#    Updated: 2024/07/09 19:17:20 by crmunoz-         ###   ########.fr        #
+#    Updated: 2024/07/10 20:32:17 by crmunoz-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= push_swap
 CC		:= clang
 FLAGS	:= -Wall -Wextra -Werror 
-SRCS	:=  push_swap.c check_error.c move_push.c move_swap.c move_rotate.c utils/ft_atol.c utils/ft_lstnew.c utils/ft_split.c utils/ft_substr.c utils/ft_lstlast.c utils/ft_lstadd_front.c utils/lstadd_back.c
+SRCS	:=  push_swap.c check_error.c move_push.c move_swap.c move_rotate.c move_reverse.c find_small.c utils/ft_atol.c utils/ft_lstnew.c utils/ft_split.c utils/ft_substr.c utils/ft_lstlast.c utils/ft_lstadd_front.c utils/ft_lstadd_back.c
 OBJS	:= $(SRCS:.c=.o)
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}

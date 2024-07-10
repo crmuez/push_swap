@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 16:13:33 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:40:16 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,17 @@ int	main(int argc, char **argv)
 		num = argv + 1;
 	check_numbers(num);
 	save_number(&a, num);
-	/*while (a)
+	set_index(&a);
+	while (a)
 	{
-		printf("%d\n", a->num);
+		printf("A: %d\n", a->index);
 		a = a->next;
-	}*/
+	}
+
 }
+/*	
+	while (b)
+	{
+		printf("B: %d\n", b->num);
+		b = b->next;
+	}*/

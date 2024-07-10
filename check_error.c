@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/18 18:18:59 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:06:29 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	save_number(t_stack **a, char **num)
 		}
 			//HACER FUNCIÓN QUE LIBERE EL STACK
 		new = ft_lstnew(n);
+		new->index = -1;
 		if (!*a)
 		{
 			*a = new;

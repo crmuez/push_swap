@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:26:42 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/09 19:29:49 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/10 16:58:30 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ra(t_stack **a, int print)
 	{
 		aux = *a;
 		*a = (*a)->next;
-		ft_lstadd_back(*a, aux);
+		aux->next = NULL;
+		ft_lstadd_back(a, aux);
 		if (print == 1)
 			write(1, "ra\n", 3);
 	}
@@ -34,7 +35,8 @@ void	rb(t_stack **b, int print)
 	{
 		aux = *b;
 		*b = (*b)->next;
-		ft_lstadd_back(*b, aux);
+		aux->next = NULL;
+		ft_lstadd_back(b, aux);
 		if (print == 1)
 			write(1, "rb\n", 3);
 	}
