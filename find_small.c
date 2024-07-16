@@ -6,13 +6,13 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:59:34 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/15 21:11:50 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:36:38 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	find_small(t_stack **a)
+void	set_index2(t_stack **a)
 {
 	t_stack	*aux;
 	t_stack	*small;
@@ -33,10 +33,8 @@ void	find_small(t_stack **a)
 					small = aux;
 			}
 			else
-			{
 				if (aux->index > max_index)
 					max_index = aux->index;
-			}
 			aux = aux->next;
 		}
 		small->index = max_index + 1;
@@ -50,7 +48,7 @@ void	set_index(t_stack **a)
 	aux = *a;
 	while (aux)
 	{
-		find_small(a);
+		set_index2(a);
 		aux = aux->next;
 	}
 }
@@ -66,8 +64,6 @@ int	order_check(t_stack **a)
 	{
 		if (aux->index == i)
 		{
-			write(1, "entro", 5);
-			printf("%d\n", aux->index);
 			aux = aux->next;
 			i++;
 		}

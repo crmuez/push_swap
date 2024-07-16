@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/15 20:34:04 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/16 21:28:31 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_atol(char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -52,6 +53,7 @@ void	rra(t_stack **a, int print);
 void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b);
 void	set_index(t_stack **a);
-int	order_check(t_stack **a);
+int		order_check(t_stack **a);
+void	short_sort(t_stack **a, t_stack **b);
 
 #endif
