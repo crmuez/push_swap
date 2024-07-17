@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/16 21:28:31 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/17 20:54:49 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 {
 	int				num;
 	int				pos;
+	//int				target;
 	int				cost;
 	int				index;
 	struct s_stack	*next;
@@ -54,6 +55,8 @@ void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b);
 void	set_index(t_stack **a);
 int		order_check(t_stack **a);
-void	short_sort(t_stack **a, t_stack **b);
+void	sort_3(t_stack **a);
+void	short_sort(t_stack **a);
+void	big_algorit(t_stack **a, t_stack **b);
 
 #endif

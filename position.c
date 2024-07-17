@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 09:21:43 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/17 19:17:14 by crmunoz-         ###   ########.fr       */
+/*   Created: 2024/07/17 16:35:07 by crmunoz-          #+#    #+#             */
+/*   Updated: 2024/07/17 20:55:05 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-int	ft_lstsize(t_stack *lst)
+void	position(t_stack **n)
 {
-	int	count;
+	t_stack	*aux;
+	int		i;
 
-	count = 0;
-	while (lst)
+	aux = *n;
+	i = 0;
+	while (aux)
 	{
-		lst = lst -> next;
-		count++;
+		aux->pos = i;
+		i++;
+		aux = aux->next;
 	}
-	return (count);
+}
+
+void	big_algorit(t_stack **a, t_stack **b)
+{
+	while (ft_lstsize(*a) > 3)
+		pb(a, b);
+	sort_3(a);
+	position(a);
+	position(b);
 }
