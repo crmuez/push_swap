@@ -39,12 +39,12 @@ int	main(int argc, char **argv)
 		return (0);
 	while (a)
 	{
-		printf("A: %d\n", a->num);
+		printf("A: %d\n", a->cost);
 		a = a->next;
 	}
 	while (b)
 	{
-		printf("B: %d\n", b->num);
+		printf("B: %d\n", b->cost);
 		b = b->next;
 	}
 }

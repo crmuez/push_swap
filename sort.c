@@ -27,9 +27,6 @@ void	sort_3(t_stack **a)
 
 void	short_sort(t_stack **a)
 {
-	t_stack	*aux;
-
-	aux = *a;
 	if (ft_lstsize(*a) == 2)
 		sa(a, 1);
 	else if (ft_lstsize(*a) == 3)

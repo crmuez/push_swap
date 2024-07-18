@@ -27,6 +27,38 @@ void	position(t_stack **n)
 	}
 }
 
+void	set_cost(t_stack **n)
+{
+	int	med;
+	int	i;
+	t_stack	*aux;
+
+	med = (ft_lstsize(*n))/2;
+	i = 0;
+	aux = *n;
+	while (aux)
+	{
+		while ((i < med) && (i >= 0))
+		{
+			aux->cost = i;
+			aux = aux->next;
+			i++;
+		}
+		while (i == med)
+		{
+			aux->cost = i;
+			aux = aux->next;
+			i = i * -1;
+		}
+		while ((i < med) && (i < 0))
+		{
+			aux->cost = i;
+			aux = aux->next;
+			i++;
+		}		
+	}
+}
+	
 void	big_algorit(t_stack **a, t_stack **b)
 {
 	while (ft_lstsize(*a) > 3)
@@ -34,4 +66,6 @@ void	big_algorit(t_stack **a, t_stack **b)
 	sort_3(a);
 	position(a);
 	position(b);
+	set_cost(a);
+	set_cost(b);
 }
