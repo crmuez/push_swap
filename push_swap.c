@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/17 19:38:34 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:38:35 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int	main(int argc, char **argv)
 		return (0);
 	while (a)
 	{
-		printf("A: %d\n", a->cost);
+		printf("A: %d\n", a->num);
 		a = a->next;
 	}
 	while (b)
 	{
-		printf("B: %d\n", b->cost);
+		printf("B: %d %d\n", b->num, b->target);
 		b = b->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/18 20:58:22 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:25:15 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int		order_check(t_stack **a);
 void	sort_3(t_stack **a);
 void	short_sort(t_stack **a);
 void	big_algorit(t_stack **a, t_stack **b);
+void	get_target(t_stack *a, t_stack *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:35:07 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/18 20:54:23 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:27:21 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ void	big_algorit(t_stack **a, t_stack **b)
 	position(b);
 	set_cost(a);
 	set_cost(b);
+	get_target(*a, *b);
 }
