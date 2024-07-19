@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/17 20:54:49 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:58:22 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 {
 	int				num;
 	int				pos;
-	//int				target;
+	int				target;
 	int				cost;
 	int				index;
 	struct s_stack	*next;
