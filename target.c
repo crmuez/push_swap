@@ -71,14 +71,12 @@ void	set_cost_total(t_stack *b)
 		if ((b->cost_a < 0) && (b->cost_b < 0))
 		{
 			if ((b->cost_a * -1) > (b->cost_b * -1))
-				b->cost_total = b->cost_a * -1;
+				b->cost_total = abs(b->cost_a);
 			else
-				b->cost_total = b->cost_b * -1;
+				b->cost_total = abs(b->cost_b);
 		}
-		if ((b->cost_a >= 0) && (b->cost_b < 0))
-			b->cost_total = ((b->cost_b * -1) + (b->cost_a));
-		if ((b->cost_a < 0) && (b->cost_b >= 0))
-			b->cost_b = ((b->cost_a * -1) + b->cost_b);
+		if (((b->cost_a >= 0) && (b->cost_b < 0)) || ((b->cost_a < 0) && (b->cost_b >= 0)))
+			b->cost_total = (abs(b->cost_b) + abs(b->cost_a));
 		b = b->next;
 	}
 }
