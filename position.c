@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:35:07 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/19 19:03:09 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:43:14 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,26 @@ void	set_cost_b(t_stack **n)
 	}
 }
 
+void moves(t_stack *a, t_stack *b)
+{
+	t_stack	*aux;
+
+	aux = b;
+	while (aux)
+	{
+		if (b->cost_a > 0 && b->cost_b > 0)
+			rr(&a, &b);
+		else if (b->cost_a < 0 && b->cost_b < 0)
+			rrr(&a, &b);
+		else if (b->cost_a > 0)
+			ra(&a, 1);
+		else if (b->cost_a < 0)
+			rra(&a, 1);
+		aux = aux->next;
+	}
+}
+
+
 void	big_algorit(t_stack **a, t_stack **b)
 {
 	while (ft_lstsize(*a) > 3)
@@ -58,4 +78,5 @@ void	big_algorit(t_stack **a, t_stack **b)
 	get_target(*a, *b);
 	set_cost_a(a, b);
 	set_cost_total(*b);
+	moves(*a, *b);
 }
