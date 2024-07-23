@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 13:59:24 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/19 19:24:32 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:34:49 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,13 @@ void	set_cost_total(t_stack *b)
 		if ((b->cost_a < 0) && (b->cost_b < 0))
 		{
 			if ((b->cost_a * -1) > (b->cost_b * -1))
-				b->cost_total = abs(b->cost_a);
+				b->cost_total = ft_abs(b->cost_a);
 			else
-				b->cost_total = abs(b->cost_b);
+				b->cost_total = ft_abs(b->cost_b);
 		}
-		if (((b->cost_a >= 0) && (b->cost_b < 0)) || ((b->cost_a < 0) && (b->cost_b >= 0)))
-			b->cost_total = (abs(b->cost_b) + abs(b->cost_a));
+		if (((b->cost_a >= 0) && (b->cost_b < 0))
+			|| ((b->cost_a < 0) && (b->cost_b >= 0)))
+			b->cost_total = (ft_abs(b->cost_b) + ft_abs(b->cost_a));
 		b = b->next;
 	}
 }

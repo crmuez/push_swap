@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/22 15:42:29 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:42:36 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_stack	*ft_lstnew(int number);
+int		ft_abs(int num);
 int		check_numbers(char **str);
 void	save_number(t_stack **a, char **num);
 void	pa(t_stack **a, t_stack **b);
@@ -63,6 +64,6 @@ void	big_algorit(t_stack **a, t_stack **b);
 void	get_target(t_stack *a, t_stack *b);
 void	set_cost_a(t_stack **a, t_stack **b);
 void	set_cost_total(t_stack *b);
-void moves(t_stack *a, t_stack *b);
+void	moves(t_stack *a, t_stack *b);
 
 #endif

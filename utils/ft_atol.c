@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:59:34 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/06/06 21:20:42 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:44:18 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ int	ft_atol(char *str)
 		i++;
 	}
 	return (n * sign);
+}
+
+int	ft_abs(int num)
+{
+	if (num < 0)
+		num = -num;
+	return (num);
 }
