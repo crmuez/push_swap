@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:08:11 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/17 16:14:06 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 21:15:29 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,41 @@ void	short_sort(t_stack **a)
 	//else
 	// pasar aquí el algoritmo para los demás números
 }
+
+void	big_algorit(t_stack **a, t_stack **b)
+{
+	t_stack	*aux;
+	t_stack	*aux_a;
+	t_stack	*aux_b;
+
+	while (ft_lstsize(*a) > 3)
+		pb(a, b);
+	sort_3(a);
+	while (b)
+	{
+		position(a);
+		position(b);
+		get_target(*a, *b);
+		set_cost_b(b);
+		set_cost_a(a, b);
+		set_cost_total(*b);
+		aux_a = *a;
+		aux_b = *b;
+		while (aux_a)
+		{
+			printf("A: %d, pos: %d\n", aux_a->num, aux_a->pos);
+			aux_a = aux_a->next;
+		}
+		while (aux_b)
+		{
+			printf("B: %d, Target:%d, CA: %d, CB: %d, ct: %d\n", (aux_b)->num, aux_b->target, aux_b->cost_a, aux_b->cost_b, (aux_b)->cost_total);
+			aux_b = (aux_b)->next;
+		}
+		aux = get_min(b);
+		moves(a, b, aux);
+	}
+}
+
 /*void	sort_4(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;

@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/23 15:45:29 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 19:35:46 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,13 @@ void	set_index(t_stack **a);
 int		order_check(t_stack **a);
 void	sort_3(t_stack **a);
 void	short_sort(t_stack **a);
+void	position(t_stack **n);
 void	big_algorit(t_stack **a, t_stack **b);
 void	get_target(t_stack *a, t_stack *b);
+void	set_cost_b(t_stack **n);
 void	set_cost_a(t_stack **a, t_stack **b);
 void	set_cost_total(t_stack *b);
-void	moves(t_stack **a, t_stack **b);
+void	moves(t_stack **a, t_stack **b, t_stack *nodo_min);
+t_stack	*get_min(t_stack **b);
 
 #endif
