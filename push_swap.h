@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/22 17:42:36 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:45:29 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	big_algorit(t_stack **a, t_stack **b);
 void	get_target(t_stack *a, t_stack *b);
 void	set_cost_a(t_stack **a, t_stack **b);
 void	set_cost_total(t_stack *b);
-void	moves(t_stack *a, t_stack *b);
+void	moves(t_stack **a, t_stack **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/10 20:06:29 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:49:51 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	check_numbers(char **str)
 		{
 			if (str[j][i] < '0' || str[j][i] > '9')
 			{
-				write (1, "Error\n", 6);
-				return (0);
+				write (2, "Error1\n", 7);
+				exit (1); // Poner función de error con exit
 			}
 			i++;
 		}

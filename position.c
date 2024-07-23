@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:35:07 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/22 18:26:58 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:16:09 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,46 +48,42 @@ void	set_cost_b(t_stack **n)
 	}
 }
 
-void	moves(t_stack *a, t_stack *b)
+void	moves(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
 
-	aux = b;
-	while (aux)
+	aux = *b;
+	if ((*b)->cost_a > 0 && (*b)->cost_b > 0)
 	{
-		if (b->cost_a > 0 && b->cost_b > 0)
-		{
-			rr(&a, &b);
-		//	b->cost_a--;
-		//	b->cost_b--;
-		}
-		else if (b->cost_a < 0 && b->cost_b < 0)
-		{
-			rrr(&a, &b);
-		//	b->cost_a++;
-		//	b->cost_b++;
-		}
-		else if (b->cost_a > 0)
-		{
-			ra(&a, 1);
-		//	b->cost_a--;
-		}
-		else if (b->cost_a < 0)
-		{
-			rra(&a, 1);
-			//b->cost_a ++;
-		}
-		else if (b->cost_b < 0)
-		{
-			rrb(&b, 1);
-			//b->cost_b++;
-		}
-		else if (b->cost_b > 0)
-		{
-			rb(&b, 1);
-			//b->cost_b--;
-		}
-		aux = aux->next;
+		rr(a, b);
+		(*b)->cost_a--;
+		(*b)->cost_b--;
+	}
+	else if ((*b)->cost_a < 0 && (*b)->cost_b < 0)
+	{
+		rrr(a, b);
+		(*b)->cost_a++;
+		(*b)->cost_b++;
+	}
+	else if ((*b)->cost_a > 0)
+	{
+		ra(a, 1);
+		(*b)->cost_a--;
+	}
+	else if ((*b)->cost_a < 0)
+	{
+		rra(a, 1);
+		(*b)->cost_a ++;
+	}
+	else if ((*b)->cost_b < 0)
+	{
+		rrb(b, 1);
+		(*b)->cost_b++;
+	}
+	else if ((*b)->cost_b > 0)
+	{
+		rb(b, 1);
+		(*b)->cost_b--;
 	}
 }
 

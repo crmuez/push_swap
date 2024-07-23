@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 13:59:24 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/22 17:34:49 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:28:15 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ void	set_cost_a(t_stack **a, t_stack **b)
 	aux = *b;
 	while (aux)
 	{
-		if ((aux->pos <= med))
-			aux->cost_a = aux->target;
-		if (aux->pos > med)
+		aux->cost_a = aux->target;
+		if (aux->cost_a > med)
 			aux->cost_a = aux->target - ft_lstsize(*a);
 		aux = aux->next;
 	}
