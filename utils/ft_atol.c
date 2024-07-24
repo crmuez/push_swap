@@ -6,11 +6,13 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:59:34 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/22 17:44:18 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 20:36:56 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atol(char *str)
+#include "../push_swap.h"
+
+long	ft_atol(char *str)
 {
 	int		i;
 	long	sign;
