@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 13:59:24 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 16:50:29 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 17:46:35 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	get_target(t_stack *a, t_stack *b)
 				pos_min = a->pos;
 			}
 			if (min == INT_MAX && (a->index == 0))
-				pos_min = get_num_min(aux);
+				pos_min = get_pos_min(aux);
 			a = a->next;
 		}
 		b->target = pos_min;

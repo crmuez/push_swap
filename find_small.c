@@ -6,27 +6,48 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:59:34 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 16:53:29 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 17:48:57 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_num_min(t_stack *a)
+int	get_pos_min(t_stack *a)
 {
-	int	num_min;
+	int	pos_min;
 	int	num;
 
 	num = INT_MAX;
-	num_min = '\0';
+	pos_min = '\0';
 	while (a)
 	{
 		if (num > a->num)
 		{
 			num = a ->num;
-			num_min = a->pos;
+			pos_min = a->pos;
 		}
 		a = a->next;
+	}
+	return (pos_min);
+}
+
+int	get_num_min(t_stack *a)
+{
+	int		num_min;
+	int		num;
+	t_stack	*aux;
+
+	num = INT_MAX;
+	num_min = '\0';
+	aux = a;
+	while (aux)
+	{
+		if (num > aux->num)
+		{
+			num = aux->num;
+			num_min = aux->num;
+		}
+		aux = aux->next;
 	}
 	return (num_min);
 }

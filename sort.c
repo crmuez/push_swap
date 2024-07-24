@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:08:11 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 17:11:34 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 17:47:02 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ void	sort_3(t_stack **a)
 		sa(a, 1);
 }
 
-void	short_sort(t_stack **a)
+void	final_moves(t_stack *a)
 {
-	if (ft_lstsize(*a) == 2)
-		sa(a, 1);
-	else if (ft_lstsize(*a) == 3)
-		sort_3(a);
-	//else
-	// pasar aquí el algoritmo para los demás números
+	int	min;
+
+	min = get_num_min(a);
+	while (a->num != min)
+		ra(&a, 1);
 }
 
 void	big_algorit(t_stack **a, t_stack **b)
@@ -51,20 +50,37 @@ void	big_algorit(t_stack **a, t_stack **b)
 		set_cost_a(a, b);
 		set_cost_total(*b);
 		aux = get_min_ct(b);
-		moves(a, b, aux);
-	}
-}
-/*
-	while (aux_a)
+	/*	t_stack	*aux_a;
+		t_stack	*aux_b;
+		aux_a = *a;
+		aux_b = *b;
+		while (aux_a)
 		{
-			printf("A: %d, pos: %d\n", aux_a->num, aux_a->pos);
+			printf("A: %d\n", aux_a->num);
 			aux_a = aux_a->next;
 		}
 		while (aux_b)
 		{
 			printf("B: %d, Target:%d, CA: %d, CB: %d, ct: %d\n", (aux_b)->num, aux_b->target, aux_b->cost_a, aux_b->cost_b, (aux_b)->cost_total);
 			aux_b = (aux_b)->next;
-		}
+		}*/
+		moves(a, b, aux);
+	}
+	final_moves(*a);
+}
+
+void	sort(t_stack **a, t_stack **b)
+{
+	if (ft_lstsize(*a) == 2)
+		sa(a, 1);
+	else if (ft_lstsize(*a) == 3)
+		sort_3(a);
+	else
+		big_algorit(a, b);
+}
+
+/*
+	
 */
 
 /*void	sort_4(t_stack **a, t_stack **b)
