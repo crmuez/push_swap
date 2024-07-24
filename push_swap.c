@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:56:18 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 17:49:31 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:24:14 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,21 @@ int	main(int argc, char **argv)
 	set_index(&a);
 	if (order_check(&a) == 1)
 		sort(&a, &b);
-	else
-		return (0);
-	/*while (a)
+	//else
+	//{
+	//	free_stack(&a, 0);
+	//	free_stack(&b, 1);
+	//}
+	while (a)
 	{
-		printf("A: %d, pos: %d\n", a->num, a->pos);
+		printf("A: %d\n", a->num);
 		a = a->next;
 	}
 	while (b)
 	{
 		printf("B: %d\n", b->num);
 		b = b->next;
-	}*/
+	}
 }
 /*	
 

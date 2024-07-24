@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:08:11 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 17:47:02 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:26:39 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	sort_3(t_stack **a)
 		sa(a, 1);
 }
 
-void	final_moves(t_stack *a)
+void	final_moves(t_stack **a)
 {
 	int	min;
 
-	min = get_num_min(a);
-	while (a->num != min)
-		ra(&a, 1);
+	min = get_num_min(*a);
+	while ((*a)->num != min)
+		ra(a, 1);
 }
 
 void	big_algorit(t_stack **a, t_stack **b)
@@ -66,7 +66,7 @@ void	big_algorit(t_stack **a, t_stack **b)
 		}*/
 		moves(a, b, aux);
 	}
-	final_moves(*a);
+	final_moves(a);
 }
 
 void	sort(t_stack **a, t_stack **b)

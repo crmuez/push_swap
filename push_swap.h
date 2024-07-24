@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 17:40:47 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:12:30 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	moves(t_stack **a, t_stack **b, t_stack *nodo_min);
 t_stack	*get_min_ct(t_stack **b);
 int		get_pos_min(t_stack *a);
 int		get_num_min(t_stack *a);
+void	free_stack(t_stack **s, int error);
 
 #endif

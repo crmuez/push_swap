@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/23 15:49:51 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:16:38 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	check_numbers(char **str)
 		{
 			if (str[j][i] < '0' || str[j][i] > '9')
 			{
-				write (2, "Error1\n", 7);
-				exit (1); // Poner función de error con exit
+				write (2, "Error\n", 7);
+				exit (1);
 			}
 			i++;
 		}
@@ -61,17 +61,9 @@ void	save_number(t_stack **a, char **num)
 	{
 		n = ft_atol(num[i]);
 		if (n > INT_MAX || n < INT_MIN)
-		{
-			write (1, "Error\n", 6);
-		//HACER FUNCIÓN QUE LIBERE EL STACK
-			return ;
-		}
+			free_stack(a, 1);
 		if (check_repeat(*a, n) == 0)
-		{
-			write (1, "Error\n", 6);
-			return ;
-		}
-			//HACER FUNCIÓN QUE LIBERE EL STACK
+			free_stack(a, 1);
 		new = ft_lstnew(n);
 		new->index = -1;
 		if (!*a)
