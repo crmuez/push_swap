@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 13:59:24 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/23 21:19:16 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:50:29 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	get_target(t_stack *a, t_stack *b)
 				min = a->num;
 				pos_min = a->pos;
 			}
-			if (min == INT_MAX && (a->next == NULL))
-				b->target = // hacer función que busque el número más pequeño;
+			if (min == INT_MAX && (a->index == 0))
+				pos_min = get_num_min(aux);
 			a = a->next;
 		}
 		b->target = pos_min;
@@ -65,7 +65,7 @@ void	set_cost_total(t_stack *b)
 	}
 }
 
-t_stack	*get_min(t_stack **b)
+t_stack	*get_min_ct(t_stack **b)
 {
 	t_stack	*aux;
 	t_stack	*nodo_min;
