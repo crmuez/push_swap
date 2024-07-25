@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:08:59 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 20:36:39 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:55:36 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-long		ft_atol(char *str);
+long	ft_atol(char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 t_stack	*ft_lstlast(t_stack *lst);
@@ -71,5 +71,6 @@ t_stack	*get_min_ct(t_stack **b);
 int		get_pos_min(t_stack *a);
 int		get_num_min(t_stack *a);
 void	free_stack(t_stack **s, int error);
+void	free_num(char **num);
 
 #endif

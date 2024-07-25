@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:35:07 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 16:50:47 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/25 11:28:02 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,30 @@ void	set_cost_b(t_stack **n)
 	}
 }
 
+void	moves2(t_stack **a, t_stack **b, t_stack *nodo_min)
+{
+	if (nodo_min->cost_a > 0)
+	{
+		ra(a, 1);
+		nodo_min->cost_a--;
+	}
+	else if (nodo_min->cost_a < 0)
+	{
+		rra(a, 1);
+		nodo_min->cost_a++;
+	}
+	else if (nodo_min->cost_b < 0)
+	{
+		rrb(b, 1);
+		nodo_min->cost_b++;
+	}
+	else if (nodo_min->cost_b > 0)
+	{
+		rb(b, 1);
+		nodo_min->cost_b--;
+	}
+}
+
 void	moves(t_stack **a, t_stack **b, t_stack *nodo_min)
 {
 	while (nodo_min->cost_a != 0 || nodo_min->cost_b != 0)
@@ -79,26 +103,7 @@ void	moves(t_stack **a, t_stack **b, t_stack *nodo_min)
 			nodo_min->cost_a++;
 			nodo_min->cost_b++;
 		}
-		else if (nodo_min->cost_a > 0)
-		{
-			ra(a, 1);
-			nodo_min->cost_a--;
-		}
-		else if (nodo_min->cost_a < 0)
-		{
-			rra(a, 1);
-			nodo_min->cost_a++;
-		}
-		else if (nodo_min->cost_b < 0)
-		{
-			rrb(b, 1);
-			nodo_min->cost_b++;
-		}
-		else if (nodo_min->cost_b > 0)
-		{
-			rb(b, 1);
-			nodo_min->cost_b--;
-		}
+		moves2(a, b, nodo_min);
 	}
 	if (nodo_min->cost_a == 0 && nodo_min->cost_b == 0)
 		pa(a, b);

@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:08:11 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 20:58:39 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:38:28 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,9 @@ void	final_moves(t_stack **a)
 void	big_algorit(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
-//	t_stack	*aux_a;
-//	t_stack	*aux_b;
 
 	while (ft_lstsize(*a) > 3)
 		pb(a, b);
-/*	aux_a = *a;
-	while (aux_a)
-	{
-		printf("A: %d, index:%d\n", aux_a->num, aux_a->index);
-		aux_a = aux_a->next;
-	}*/
 	sort_3(a);
 	while (*b)
 	{
@@ -56,18 +48,6 @@ void	big_algorit(t_stack **a, t_stack **b)
 		set_cost_a(a, b);
 		set_cost_total(*b);
 		aux = get_min_ct(b);
-		/*aux_a = *a;
-		aux_b = *b;
-		while (aux_a)
-		{
-			printf("A: %d\n", aux_a->num);
-			aux_a = aux_a->next;
-		}
-		while (aux_b)
-		{
-			printf("B: %d, Target:%d, CA: %d, CB: %d, ct: %d\n", (aux_b)->num, aux_b->target, aux_b->cost_a, aux_b->cost_b, (aux_b)->cost_total);
-			aux_b = (aux_b)->next;
-		}*/
 		moves(a, b, aux);
 	}
 	final_moves(a);

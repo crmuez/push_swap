@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 19:04:29 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/24 21:38:50 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:33:08 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,12 @@ int	check_numbers(char **str)
 	{
 		i = 0;
 		if (((str[j][i] == '-') || (str[j][i] == '+'))
-			&& (str[j][i+1] >= '0' && str[j][i+1] <= '9'))
+			&& ((str[j][i + 1] >= '0') && (str[j][i + 1] <= '9')))
 			i++;
 		while (str[j][i])
 		{
 			if (str[j][i] < '0' || str[j][i] > '9')
-			{
-				printf("%c %c", str[j][i], str[j][i+1]);
-				write (2, "Error\n", 6);
-				exit (1);
-			}
+				free_stack(NULL, 1);
 			i++;
 		}
 		j++;
@@ -61,6 +57,7 @@ void	save_number(t_stack **a, char **num)
 	long	n;
 
 	i = 0;
+	new = NULL;
 	while (num[i])
 	{
 		n = ft_atol(num[i]);
@@ -76,5 +73,5 @@ void	save_number(t_stack **a, char **num)
 		i++;
 	}
 	if (*a && (*a)->next == NULL)
-		exit (0);
+		free_stack(a, 0);
 }

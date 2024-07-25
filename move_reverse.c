@@ -6,7 +6,7 @@
 /*   By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:39:45 by crmunoz-          #+#    #+#             */
-/*   Updated: 2024/07/10 16:59:41 by crmunoz-         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:50:23 by crmunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rra(t_stack **a, int print)
 	t_stack	*last;
 	t_stack	*aux;
 
+	aux = NULL;
+	last = NULL;
 	if (*a && (*a)->next)
 	{
 		aux = *a;
@@ -35,6 +37,8 @@ void	rrb(t_stack **b, int print)
 	t_stack	*last;
 	t_stack	*aux;
 
+	aux = NULL;
+	last = NULL;
 	if (*b && (*b)->next)
 	{
 		aux = *b;

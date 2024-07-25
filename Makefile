@@ -6,13 +6,13 @@
 #    By: crmunoz- <crmunoz-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 15:45:18 by crmunoz-          #+#    #+#              #
-#    Updated: 2024/07/24 18:19:47 by crmunoz-         ###   ########.fr        #
+#    Updated: 2024/07/25 12:10:07 by crmunoz-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= push_swap
 CC		:= clang
-FLAGS	:= -Wall -Wextra -Werror 
+FLAGS	:= -Wall -Wextra -Werror -g
 SRCS	:=  push_swap.c check_error.c move_push.c move_swap.c move_rotate.c move_reverse.c find_small.c \
 			sort.c position.c target.c free.c\
 			utils/ft_atol.c utils/ft_lstnew.c utils/ft_split.c utils/ft_substr.c utils/ft_lstlast.c \
